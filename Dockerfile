@@ -4,4 +4,10 @@ WORKDIR /home/node/app
 
 USER node
 
-CMD [ "tail", "-f", "/dev/null" ]
+RUN npx prisma generate
+
+RUN npm run build
+
+CMD ["npm", "start"]
+
+#CMD [ "tail", "-f", "/dev/null" ]

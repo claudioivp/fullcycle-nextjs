@@ -13,3 +13,8 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json(chatCreated);
 }
+
+export async function GET(request: NextRequest) {
+  const chats = await prisma.chat.findMany();
+  return NextResponse.json(chats);
+}
